@@ -6,7 +6,7 @@ App({
     for (var index = 0; index < number; index++){
       todos.push({id: index, text: 'it is todo ' + (index+1), createTime: new Date()});
     }
-    wx.setStorageSync('todos', todos)
+    wx.setStorageSync('todos', todos);
   },
   getUserInfo:function(cb){
     var that = this

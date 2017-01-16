@@ -1,0 +1,10 @@
+<view>
+  <view class="todo-wrapper">
+    <textarea placeholder="填写TODO内容" auto-focus class="todo-content"/>
+  </view>
+
+  <button class="btn" type="primary" size="default" bindtap="create">创建TODO 
+  </button>
+  <button class="btn" type="default" size="default" bindtap="cancel">取消 
+  </button>
+</view>

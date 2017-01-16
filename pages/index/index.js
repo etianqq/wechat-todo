@@ -2,24 +2,7 @@
 //获取应用实例
 var app = getApp()
 Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    objectArray: [
-      {id: 5, unique: 'unique_5'},
-      {id: 4, unique: 'unique_4'},
-      {id: 3, unique: 'unique_3'},
-      {id: 2, unique: 'unique_2'},
-      {id: 1, unique: 'unique_1'},
-      {id: 0, unique: 'unique_0'},
-    ],
-    numberArray: [1, 2, 3, 4],
-    item: {
-      index: 0,
-      msg: 'this is a template',
-      time: '2016-09-15'
-    }
-  },
+  data: {},
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -36,38 +19,23 @@ Page({
         userInfo:userInfo
       })
     })
+    // get todo list
+    var todos = wx.getStorageSync('todos');
+    todos.forEach(function(todo){
+        todo.createTimeText = new Date(todo.createTime).toDateString();
+    });
+    that.setData({todos: todos});
   },
   onShareAppMessage: function(){
     return {
-      title: '自定义分享标题',
-      desc: '自定义分享描述',
+      title: '分享我的TODO',
+      desc: '我的TODO列表',
       path: '/page/user?id=123'
     }
   },
-  switch: function(e) {
-    const length = this.data.objectArray.length
-    for (let i = 0; i < length; ++i) {
-      const x = Math.floor(Math.random() * length)
-      const y = Math.floor(Math.random() * length)
-      const temp = this.data.objectArray[x]
-      this.data.objectArray[x] = this.data.objectArray[y]
-      this.data.objectArray[y] = temp
-    }
-    this.setData({
-      objectArray: this.data.objectArray
-    })
-  },
-  addToFront: function(e) {
-    const length = this.data.objectArray.length
-    this.data.objectArray = [{id: length, unique: 'unique_' + length}].concat(this.data.objectArray)
-    this.setData({
-      objectArray: this.data.objectArray
-    })
-  },
-  addNumberToFront: function(e){
-    this.data.numberArray = [ this.data.numberArray.length + 1 ].concat(this.data.numberArray)
-    this.setData({
-      numberArray: this.data.numberArray
-    })
+  createTodo: function(){
+    wx.redirectTo({
+      url: '../create/create'
+    });
   }
 })
