@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+
+  <view>
+    <switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;"> {{item.id}} </switch>
+    <button bindtap="switch"> Switch </button>
+    <button bindtap="addToFront"> Add to the front </button>
+
+    <switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+    <button bindtap="addNumberToFront"> Add to the front </button>
+  </view>
+  <template is="msgItem" data="{{...item}}"/>
+  
+  <template name="msgItem">
+    <view>
+      <text> {{index}}: {{msg}} </text>
+      <text> Time: {{time}} </text>
+    </view>
+  </template>
+</view>
