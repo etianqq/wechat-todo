@@ -2,7 +2,9 @@
 //获取应用实例
 var app = getApp()
 Page({
-  data: {},
+  data: {
+    todos: []
+  },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -23,6 +25,7 @@ Page({
     var todos = wx.getStorageSync('todos');
     todos.forEach(function(todo){
         todo.createTimeText = new Date(todo.createTime).toDateString();
+        todo.isDelete = false;
     });
     that.setData({todos: todos});
   },
@@ -37,5 +40,16 @@ Page({
     wx.redirectTo({
       url: '../create/create'
     });
+  },
+  showDeleteBtn: function(event){
+    var index = event.currentTarget.id;
+    var deletedTodo = "todos["+index+"].text";
+    this.setData({
+       deletedTodo: true
+    });
+  },
+  deleteTodo: function(index){
+    this.todos.splice(index, 1);
+    wx.setStorageSync('todos', this.todos);
   }
 })
