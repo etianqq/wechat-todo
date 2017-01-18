@@ -1,5 +1,4 @@
 <view>
-  <text class="alert" hidden="{{isValid ? true: false}}">TODO内容不能为空！</text>
   <form bindsubmit="bindFormSubmit">
     <view class="todo-wrapper">
       <textarea placeholder="填写TODO内容" auto-focus name="todoText" bindfocus="textareaFocus"/>

@@ -43,9 +43,8 @@
 }
 
 .icon-delete {
-  position:absolute;
-  top:0;
-  right:20px;
+  vertical-align:middle;
+  margin-right:5px;
 }
 
 .notice-wrapper {

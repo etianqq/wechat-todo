@@ -2,13 +2,14 @@
 //获取应用实例
 var app = getApp();
 Page({
-    data: {
-        isValid: true
-    },
+    data: {},
     bindFormSubmit: function(e){
         var text = e.detail.value.todoText;
         if (text.trim() === '') {
-            this.setData({isValid: false});
+            wx.showToast({
+                title: '内容不能为空',
+                mask: true    
+            });
             return;
         }
         
@@ -25,6 +26,6 @@ Page({
         }); 
     },
     textareaFocus: function(){
-        this.setData({isValid: true});   
+        //todo  
     }
 });

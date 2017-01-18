@@ -10,12 +10,12 @@
   </view>
   
   <view class="todo-wrapper">
-    <view class="todo-item" wx:for="{{todos}}" bindtouchend="showDeleteBtn" id="{{index}}">
-      <text class="createTime">{{index+1}}. {{item.createTimeText}}-{{item.isDelete}}</text>
+    <view class="todo-item" wx:for="{{todos}}" wx:key="id" bindtouchend="showDeleteBtn" id="{{index}}">
+      <text class="createTime">{{index+1}}. {{item.createTimeText}}</text>
+      <icon type="clear" color="red" hidden="{{item.isDelete? false: true}}" catchtap="deleteTodo"
+      class="icon-delete" data-index="{{index}}"></icon>
       <text class="text">{{item.text}}</text>
-      <icon type="clear" color="red" hidden="{{item.isDelete? false: true}}" bindtap="deleteTodo"
-      class="icon-delete"></icon>
-  </view>
+    </view>
   </view>
   
   <button class="todo-create-btn" type="primary" size="default" bindtap="createTodo">创建新的TODO 
