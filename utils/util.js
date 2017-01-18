@@ -1,4 +1,5 @@
-function formatTime(date) {
+function formatTime(dateStr) {
+  var date = new Date(dateStr);
   var year = date.getFullYear()
   var month = date.getMonth() + 1
   var day = date.getDate()
@@ -16,6 +17,11 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function getRandomId(){
+  return Math.random() * 1000000000;
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getRandomId: getRandomId
 }

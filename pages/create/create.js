@@ -1,6 +1,6 @@
 //create.js
 //获取应用实例
-var app = getApp();
+var util = require('../../utils/util');
 Page({
     data: {},
     bindFormSubmit: function(e){
@@ -14,7 +14,7 @@ Page({
         }
         
         var todos = wx.getStorageSync('todos');
-        todos.push({id: todos[todos.length - 1].id, text: text, createTime: new Date()});
+        todos.push({id: util.getRandomId(), text: text, createTime: new Date()});
         wx.setStorageSync('todos', todos);
         wx.redirectTo({
             url: '../index/index'

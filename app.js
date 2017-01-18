@@ -1,10 +1,11 @@
 //app.js
+var util = require('utils/util');
 App({
   onLaunch: function () {
     var number = 5;
     var todos = [];
     for (var index = 0; index < number; index++){
-      todos.push({id: index, text: 'it is todo ' + (index+1), createTime: new Date()});
+      todos.push({id: util.getRandomId(), text: 'it is todo ' + (index+1), createTime: new Date()});
     }
     wx.setStorageSync('todos', todos);
   },

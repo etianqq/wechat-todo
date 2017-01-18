@@ -10,10 +10,9 @@
   </view>
   
   <view class="todo-wrapper">
-    <view class="todo-item" wx:for="{{todos}}" wx:key="id" bindtouchend="showDeleteBtn" id="{{index}}">
+    <view class="todo-item" wx:for="{{todos}}" wx:key="id" 
+    id="{{item.id}}" bindtap="goToDetailView">
       <text class="createTime">{{index+1}}. {{item.createTimeText}}</text>
-      <icon type="clear" color="red" hidden="{{item.isDelete? false: true}}" catchtap="deleteTodo"
-      class="icon-delete" data-index="{{index}}"></icon>
       <text class="text">{{item.text}}</text>
     </view>
   </view>

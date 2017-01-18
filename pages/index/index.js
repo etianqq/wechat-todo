@@ -1,15 +1,10 @@
 //index.js
 //获取应用实例
 var app = getApp()
+var util = require('../../utils/util');
 Page({
   data: {
     todos: []
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   onLoad: function () {
     console.log('onLoad')
@@ -24,7 +19,7 @@ Page({
     // get todo list
     var todos = wx.getStorageSync('todos');
     todos.forEach(function(todo){
-        todo.createTimeText = new Date(todo.createTime).toDateString();
+        todo.createTimeText = util.formatTime(todo.createTime);
         todo.isDelete = false;
     });
     that.setData({todos: todos});
@@ -45,23 +40,10 @@ Page({
     var index = event.currentTarget.id;
     this.updateTodoItemDeleteStatus(this, index, true);
   },
-  deleteTodo: function(event){
-    var index = parseInt(event.target.dataset.index);
-    var self = this;
-    wx.showModal({
-      title: '确认删除？',
-      success: function(res){
-        if (res.confirm){
-            self.data.todos.splice(index, 1);
-            self.setData({
-              todos: self.data.todos
-            });
-            wx.setStorageSync('todos', self.data.todos);
-        }
-        else {
-          self.updateTodoItemDeleteStatus(self, index, false);
-        }
-      }
+  goToDetailView: function(event){
+    var id = event.currentTarget.id; 
+    wx.redirectTo({
+      url: '../detail/detail?id='+id
     });
   },
   updateTodoItemDeleteStatus: function(target, index, isDelete){
