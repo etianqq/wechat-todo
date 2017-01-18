@@ -3,7 +3,7 @@
     <view class="todo-wrapper">
         <label>详细内容({{todo.createTimeText}})</label>
         <view class="content" hidden="{{todo.isEditMode ? true: false}}">{{todo.text}}</view>
-        <textarea hidden="{{todo.isEditMode ? false: true}}" auto-focus name="todoText" 
+        <textarea wx:if="{{todo.isEditMode}}" auto-focus name="todoText" 
         value="{{todo.text}}"/>
     </view>
 
