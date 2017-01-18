@@ -1,7 +1,9 @@
 <view>
     <form bindsubmit="bindFormSubmit">
     <view class="todo-wrapper">
-        <label>详细内容({{todo.createTimeText}})</label>
+        <label>创建日期:</label>
+        <view class="content">{{todo.createTimeText}}</view>
+        <label>详细内容:</label>
         <view class="content" hidden="{{todo.isEditMode ? true: false}}">{{todo.text}}</view>
         <textarea wx:if="{{todo.isEditMode}}" auto-focus name="todoText" 
         value="{{todo.text}}"/>

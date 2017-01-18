@@ -6,7 +6,7 @@
   </view>
 
   <view class="notice-wrapper">
-    <text class="notice">(注意：在TODO列表上滑动可以删除该TODO)</text>
+    <text class="notice">(注意：在TODO列表上单击可以进入编辑模式)</text>
   </view>
   
   <view class="todo-wrapper">
