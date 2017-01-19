@@ -20,6 +20,8 @@ Page({
         });
         if (currentTodo){
             currentTodo.isEditMode = false;
+            currentTodo.imgSrc = '../../images/' + util.getRandomImg();
+            currentTodo.audioConfig = util.getAudioConfig();
             currentTodo.createTimeText = util.formatTime(currentTodo.createTime);
             this.setData({
                 todo: currentTodo,

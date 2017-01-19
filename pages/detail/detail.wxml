@@ -3,6 +3,16 @@
     <view class="todo-wrapper">
         <label>创建日期:</label>
         <view class="content">{{todo.createTimeText}}</view>
+        <label>配图:</label>
+        <view class="content">
+            <image src="{{todo.imgSrc}}" mode="scaleToFill"></image>
+        </view>
+        <label>音频:</label>
+        <view class="content">
+            <audio src="{{todo.audioConfig.src}}" poster="{{todo.audioConfig.poster}}" 
+            name="{{todo.audioConfig.name}}" author="{{todo.audioConfig.author}}" 
+            id="todo_audio" controls></audio>
+        </view>
         <label>详细内容:</label>
         <view class="content" hidden="{{todo.isEditMode ? true: false}}">{{todo.text}}</view>
         <textarea wx:if="{{todo.isEditMode}}" auto-focus name="todoText" 

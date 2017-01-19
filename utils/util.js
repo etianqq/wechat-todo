@@ -21,7 +21,23 @@ function getRandomId(){
   return Math.random() * 1000000000;
 }
 
+function getRandomImg(){
+  var index = Math.ceil(Math.random() * 3);
+  return "p" + index + '.jpg';
+}
+
+function getAudioConfig() {
+  return {
+    poster: 'https://y.gtimg.cn/music/photo_new/T002R300x300M000000I5jJB3blWeN.jpg?max_age=2592000',
+    name: '安静',
+    author: '周杰伦',
+    src: 'http://dl.stream.qqmusic.qq.com/C400000amRvH3wxv56.m4a?vkey=2729342A5B228A41383E2E818F44B38BE857E08DA87B17B6B87E3F3DA5041F1A7D90347B86111E803C17740BB43B200F47628F8AFCB5EA3D&guid=6180405497&fromtag=30',
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
-  getRandomId: getRandomId
+  getRandomId: getRandomId,
+  getRandomImg: getRandomImg,
+  getAudioConfig: getAudioConfig
 }
