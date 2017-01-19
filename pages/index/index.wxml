@@ -1,10 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-
   <view class="notice-wrapper">
     <text class="notice">(注意：在TODO列表上单击可以进入编辑模式)</text>
   </view>

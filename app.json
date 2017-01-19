@@ -2,8 +2,22 @@
   "pages":[
     "pages/index/index",
     "pages/create/create",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/userinfo/userinfo"
   ],
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/todo_no_select.png",
+      "selectedIconPath": "images/todo.png"
+    }, {
+      "pagePath": "pages/userinfo/userinfo",
+      "text": "个人信息",
+      "iconPath": "images/user_no_select.png",
+      "selectedIconPath": "images/user.png"
+    }]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
