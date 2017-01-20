@@ -28,10 +28,10 @@ function getRandomImg(){
 
 function getAudioConfig() {
   return {
-    poster: 'https://y.gtimg.cn/music/photo_new/T002R300x300M000000I5jJB3blWeN.jpg?max_age=2592000',
-    name: '安静',
-    author: '周杰伦',
-    src: 'http://dl.stream.qqmusic.qq.com/C400000amRvH3wxv56.m4a?vkey=2729342A5B228A41383E2E818F44B38BE857E08DA87B17B6B87E3F3DA5041F1A7D90347B86111E803C17740BB43B200F47628F8AFCB5EA3D&guid=6180405497&fromtag=30',
+    poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
+    name: '此时此刻',
+    author: '许巍',
+    src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
   }
 }
 
