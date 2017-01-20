@@ -53,7 +53,7 @@ Page({
         });
     },
     back: function(){
-        wx.redirectTo({
+        wx.switchTab({
            url: '../index/index'
         })
     },
@@ -69,7 +69,7 @@ Page({
         
         this.data.todos[this.data.currentTodoIndex].text = text;
         wx.setStorageSync('todos', this.data.todos);
-        wx.redirectTo({
+        wx.switchTab({
             url: '../index/index'
         }); 
     },
