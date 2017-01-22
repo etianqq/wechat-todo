@@ -16,7 +16,7 @@ Page({
 
         wx.getLocation({
             // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-            type: 'wgs84', 
+            type: 'wgs84',
             success: function (res) {
                 // success
                 var latitude = res.latitude;
@@ -24,7 +24,7 @@ Page({
                 that.setData({
                     'mapConfig.longitude': longitude,
                     'mapConfig.latitude': latitude,
-                    'mapConfig.markers': [{latitude: latitude, longitude: longitude}]
+                    'mapConfig.markers': [{ latitude: latitude, longitude: longitude }]
                 });
             },
             fail: function () {
@@ -36,6 +36,25 @@ Page({
             complete: function () {
                 // complete
             }
-        });
+        }); 
+    },
+
+    testRequestApi: function (e) {
+        wx.request({
+          url: 'https://graph.qq.com/favicon.ico',
+          //data: {},
+          method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          //header: {}, // 设置请求的 header
+          success: function(res){
+            // success
+            console.log('test successfully!')
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
+        })
     }
 })

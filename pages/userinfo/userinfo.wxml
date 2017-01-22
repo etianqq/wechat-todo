@@ -1,12 +1,15 @@
 <view class="userInfo-wrapper">
-    <view  bindtap="bindViewTap" class="userinfo">
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </view>
-    <label wx:if="{{isShowMap}}">我的位置:</label>
-    <view wx:if="{{isShowMap}}">
-        <map id="map" longitude="{{mapConfig.longitude}}" latitude="{{mapConfig.latitude}}" scale="14" markers="{{mapConfig.markers}}" show-location style="width: 100%; height: 300px;">
-        </map>
-    </view>
-    
-</view>  
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <label wx:if="{{isShowMap}}">我的位置:</label>
+  <view wx:if="{{isShowMap}}"  class="content">
+    <map id="map" longitude="{{mapConfig.longitude}}" latitude="{{mapConfig.latitude}}" scale="14" markers="{{mapConfig.markers}}" show-location style="width: 100%; height: 300px;">
+    </map>
+  </view>
+  <view class="content">
+    <button class="btn" type="default" size="default" bindtap="testRequestApi">测试request api
+    </button>
+  </view>
+</view>
