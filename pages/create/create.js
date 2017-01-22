@@ -16,12 +16,12 @@ Page({
         var todos = wx.getStorageSync('todos');
         todos.push({id: util.getRandomId(), text: text, createTime: new Date()});
         wx.setStorageSync('todos', todos);
-        wx.redirectTo({
+        wx.switchTab({
             url: '../index/index'
         }); 
     },
     cancel: function(){
-       wx.redirectTo({
+       wx.switchTab({
             url: '../index/index'
         }); 
     },
